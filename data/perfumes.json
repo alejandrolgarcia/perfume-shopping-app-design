@@ -1,0 +1,43 @@
+{
+    "results": [{
+            "id": 1,
+            "name": "Libre",
+            "desc": "LIBRE representa a la mujer fuerte y valiente que siente la libertad en toda su plenitud.",
+            "score": 4.9,
+            "price": 50.0,
+            "imgPath": "assets/images/imagen1.jpeg"
+        },
+        {
+            "id": 2,
+            "name": "Y Eau de Parfum",
+            "desc": "Y Eau de Parfum, una seductora interpretación de la emblemática camiseta blanca y chaqueta negra.",
+            "score": 4.8,
+            "price": 54.99,
+            "imgPath": "assets/images/imagen2.jpeg"
+        },
+        {
+            "id": 3,
+            "name": "Y Eau de Toilette",
+            "desc": "Y Eau de Toilette, la nueva masculinidad YSL. Para un hombre que alcanzando sus metas.",
+            "score": 4.9,
+            "price": 49.99,
+            "imgPath": "assets/images/imagen3.jpeg"
+        },
+        {
+            "id": 4,
+            "name": "Idole",
+            "desc": "Para todas aquellas mujeres pioneras, fuertes y optimistas, que sueñan a lo grande",
+            "score": 4.7,
+            "price": 40.0,
+            "imgPath": "assets/images/imagen4.jpeg"
+        },
+        {
+            "id": 5,
+            "name": "La Vie est Belle",
+            "desc": "Una invitación a vivir el momento, a sentirse libre y a disfrutar de las emociones.",
+            "score": 5.0,
+            "price": 60.0,
+            "imgPath": "assets/images/imagen5.jpeg"
+        }
+    ]
+}

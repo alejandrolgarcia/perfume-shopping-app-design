@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:tarea_edutec/models/perfume_model.dart';
+import 'package:tarea_edutec/providers/perfume_provider.dart';
+import 'package:tarea_edutec/widgets/card_widget.dart';
 
 class Home extends StatelessWidget {
-  // const Home({Key key}) : super(key: key);
+
+  final PerfumeProvider perfumeProvider = PerfumeProvider();
 
   final darkColor = Color.fromRGBO(33, 37, 52, 1);
   final redColor = Color.fromRGBO(246, 116, 77, 1);
@@ -39,7 +43,8 @@ class Home extends StatelessWidget {
           children: [
 
             search(),
-            count()
+            count(),
+            perfumeList()
 
           ],
         ),
@@ -148,5 +153,37 @@ class Home extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Widget perfumeList() {
+
+    return Container(
+      padding: EdgeInsets.only(left: 10),
+      height: 450.0,
+      child: FutureBuilder(
+        future: perfumeProvider.loadData(),
+        builder: (BuildContext context, AsyncSnapshot<Result> snapshot) {
+          print(snapshot.data);
+          switch (snapshot.connectionState) {
+            case ConnectionState.active:
+            case ConnectionState.done:
+              return ListView(
+                scrollDirection: Axis.horizontal,
+                children: snapshot.data.results.map<Widget>( (result) {
+                  return Container(
+                    child: CardWidget(perfume: result),
+                  );
+                }).toList(),
+              );
+
+              break;
+            default:
+              return CircularProgressIndicator();
+              break;
+          }
+        },
+      ),
+    );
+    
   }
 }
