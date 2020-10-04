@@ -1,0 +1,83 @@
+{
+    "results": [{
+            "id": 10,
+            "name": "Stronger With You Intensely",
+            "desc": "Este aroma adictivo presenta notas de pimienta rosa, vainilla y un acorde de madera de ámbar.",
+            "score": 4.9,
+            "price": 50.0,
+            "imgPath": "assets/images/imagen10.jpg"
+        },
+        {
+            "id": 11,
+            "name": "Dior Homme Eau de Toilette",
+            "desc": "Una nueva sensualidad masculina que se redefine en una polifonía de madera en bruto y suave.",
+            "score": 4.8,
+            "price": 54.99,
+            "imgPath": "assets/images/imagen11.jpg"
+        },
+        {
+            "id": 12,
+            "name": "Because It's You",
+            "desc": "Una fragancia alegre, deliciosa y luminosa. Para una mujer naturalmente elegante, intuitiva.",
+            "score": 4.9,
+            "price": 49.99,
+            "imgPath": "assets/images/imagen12.jpg"
+        },
+        {
+            "id": 13,
+            "name": "J'Adore Eau de Parfum",
+            "desc": "Un bouquet creado minuciosamente, como una flor elaborada a medida. La esencia de ylang-ylang.",
+            "score": 4.7,
+            "price": 40.0,
+            "imgPath": "assets/images/imagen13.jpg"
+        },
+        {
+            "id": 14,
+            "name": "L'Homme Lacoste Intense",
+            "desc": "Una versión más intensa de L'Homme Lacoste, que subraya el carisma natural de los hombres.",
+            "score": 5.0,
+            "price": 60.0,
+            "imgPath": "assets/images/imagen14.jpg"
+        },
+        {
+            "id": 15,
+            "name": "Tresor",
+            "desc": "Desde su creación en 1990, Trésor ha sido el ejemplo de amor absoluto en todas su facetas.",
+            "score": 5.0,
+            "price": 69.9,
+            "imgPath": "assets/images/imagen15.jpg"
+        },
+        {
+            "id": 16,
+            "name": "Desigual Fresh",
+            "desc": "Fresh es natural, chispeante, auténtica e intensa. Es espontánea, sin prejuicios ni alteraciones.",
+            "score": 4.5,
+            "price": 60.0,
+            "imgPath": "assets/images/imagen16.jpg"
+        },
+        {
+            "id": 17,
+            "name": "Oscar",
+            "desc": "Inspirada en el aroma a flores, Oscar es una fragancia romántica y soñadora, femenina y elegante.",
+            "score": 4.8,
+            "price": 70.0,
+            "imgPath": "assets/images/imagen17.jpg"
+        },
+        {
+            "id": 18,
+            "name": "Boss The Scent Private",
+            "desc": "Adictivas notas de cacao vibran en el corazón de BOSS The Scent Private Accord for Her.",
+            "score": 4.9,
+            "price": 55.0,
+            "imgPath": "assets/images/imagen18.jpg"
+        },
+        {
+            "id": 19,
+            "name": "Victorinox Ella",
+            "desc": "El perfume eLLa cuenta la historia de un viaje romántico por Asia Central. Inspirada en sus paisajes",
+            "score": 4.0,
+            "price": 50.0,
+            "imgPath": "assets/images/imagen19.jpg"
+        }
+    ]
+}

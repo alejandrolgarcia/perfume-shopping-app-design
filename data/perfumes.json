@@ -38,6 +38,14 @@
             "score": 5.0,
             "price": 60.0,
             "imgPath": "assets/images/imagen5.jpeg"
+        },
+        {
+            "id": 6,
+            "name": "Scandal a Paris",
+            "desc": "Jean Paul Gaultier está de regreso con un nuevo escándalo. Un perfume femenino sin igual.",
+            "score": 5.0,
+            "price": 69.99,
+            "imgPath": "assets/images/imagen6.jpeg"
         }
     ]
 }

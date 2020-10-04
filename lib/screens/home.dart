@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tarea_edutec/models/perfume_model.dart';
 import 'package:tarea_edutec/providers/perfume_provider.dart';
 import 'package:tarea_edutec/widgets/card_widget.dart';
+import 'package:tarea_edutec/widgets/small_card_widget.dart';
 
 class Home extends StatelessWidget {
 
@@ -14,10 +15,10 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
+        brightness: Brightness.light,
         elevation: 0,
         bottomOpacity: 0.0,
         leading: IconButton(
@@ -38,17 +39,14 @@ class Home extends StatelessWidget {
       ),
 
       body: Container(
-
         child: Column(
           children: [
-
             search(),
             count(),
-            perfumeList()
-
+            bestSellers(),
+            allPerfumes()
           ],
         ),
-
       ),
 
     );
@@ -115,7 +113,7 @@ class Home extends StatelessWidget {
 
   Widget count() {
     return Container(
-      padding: EdgeInsets.only(left:20, top: 10, bottom: 10),
+      padding: EdgeInsets.only(left:20, bottom: 10),
       child: Row(
         children: [
           Text(
@@ -155,7 +153,7 @@ class Home extends StatelessWidget {
     );
   }
 
-  Widget perfumeList() {
+  Widget bestSellers() {
 
     return Container(
       padding: EdgeInsets.only(left: 10),
@@ -163,7 +161,7 @@ class Home extends StatelessWidget {
       child: FutureBuilder(
         future: perfumeProvider.loadData(),
         builder: (BuildContext context, AsyncSnapshot<Result> snapshot) {
-          print(snapshot.data);
+
           switch (snapshot.connectionState) {
             case ConnectionState.active:
             case ConnectionState.done:
@@ -175,8 +173,8 @@ class Home extends StatelessWidget {
                   );
                 }).toList(),
               );
-
               break;
+
             default:
               return CircularProgressIndicator();
               break;
@@ -184,6 +182,37 @@ class Home extends StatelessWidget {
         },
       ),
     );
-    
   }
+
+  Widget allPerfumes() {
+    return Container(
+      padding: EdgeInsets.only(left: 10, top: 10),
+      height: 180.0,
+      child: FutureBuilder(
+        future: perfumeProvider.loadAllPerfumes(),
+        builder: (BuildContext context, AsyncSnapshot<Result> snapshot) {
+          
+          switch (snapshot.connectionState) {
+            case ConnectionState.active:
+            case ConnectionState.done:
+              return ListView(
+                scrollDirection: Axis.horizontal,
+                children: snapshot.data.results.map<Widget>( (result) {
+                  return Container(
+                    padding: EdgeInsets.all(10),
+                    child: SmallCardWidget(perfume: result)
+                  );
+                }).toList()
+              );
+              break;
+
+            default:
+              return CircularProgressIndicator();
+              break;
+          }
+        },
+      ),
+    );
+  }
+
 }

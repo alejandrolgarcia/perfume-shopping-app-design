@@ -12,4 +12,10 @@ class PerfumeProvider {
   
   }
 
+  Future<Result> loadAllPerfumes() async {
+    
+    final resp = await rootBundle.loadString('data/perfumes1.json');
+    return Result.fromJson(json.decode(resp));
+  }
+
 }

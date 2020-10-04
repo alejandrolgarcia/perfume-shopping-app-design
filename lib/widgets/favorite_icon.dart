@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 
 class FavoriteIcon extends StatefulWidget {
+
+  final double sizeIcon;
+
+  FavoriteIcon({ @required this.sizeIcon });
+
   @override
   _FavoriteIconState createState() => _FavoriteIconState();
 }
 
 class _FavoriteIconState extends State<FavoriteIcon> {
-
+  
   Color _favIconColor = Colors.black;
 
   @override
@@ -15,6 +20,7 @@ class _FavoriteIconState extends State<FavoriteIcon> {
        icon: Icon(
          Icons.favorite,
          color: _favIconColor,
+         size: widget.sizeIcon,
         ),
        onPressed: (){
          setState(() {

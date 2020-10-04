@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tarea_edutec/screens/home.dart';
+import 'package:tarea_edutec/screens/perfume_detail.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: 'home',
       routes: {
-        'home' : (BuildContext context) => Home(),
+        'home'  : (BuildContext context) => Home(),
+        'detail': (BuildContext context) => PerfumeDetail()
       },
     );
   }
