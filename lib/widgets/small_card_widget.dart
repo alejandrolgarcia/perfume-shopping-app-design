@@ -11,7 +11,7 @@ class SmallCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Container(
-        width: 110,
+        width: 100,
         height: 150,
         decoration: BoxDecoration(
           color: Colors.white,
@@ -19,7 +19,7 @@ class SmallCardWidget extends StatelessWidget {
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.2),
-              spreadRadius: 5,
+              spreadRadius: 2,
               blurRadius: 5,
               offset: Offset(0, 3) 
             )

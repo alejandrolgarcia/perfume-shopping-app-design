@@ -18,12 +18,15 @@ class CardWidget extends StatelessWidget {
 
     return GestureDetector(
       child: Container(
-        padding: EdgeInsets.all(10),
+        padding: EdgeInsets.only(
+          top: 10,
+          left: 20,
+        ),
         child: Column(
           children: [
             Container(
-              width: 250,
-              height: 250,
+              width: 200,
+              height: 200,
               child: Hero(
                 tag: perfume.id,
                 child: ClipRRect(
@@ -40,9 +43,12 @@ class CardWidget extends StatelessWidget {
               ),
             ),
             Container(
-              padding: EdgeInsets.all(10),
-              width: 250,
-              height: 180,
+              padding: EdgeInsets.only(
+                top: 10,
+                left: 10
+              ),
+              width: 200,
+              height: 170,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
@@ -54,7 +60,7 @@ class CardWidget extends StatelessWidget {
                     color: Colors.grey.withOpacity(0.2),
                     spreadRadius: 1,
                     blurRadius: 5,
-                    offset: Offset(0, 3)         
+                    offset: Offset(0, 1)         
                   )
                 ]
               ),
@@ -66,15 +72,19 @@ class CardWidget extends StatelessWidget {
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: 5),
-                  Text(perfume.desc),
+                  Text(
+                    perfume.desc,
+                    maxLines: 3,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                   SizedBox(height: 5),
                   Row(
                     children: [
-                      Icon(Icons.star, color: redColor),
-                      Icon(Icons.star, color: redColor),
-                      Icon(Icons.star, color: redColor),
-                      Icon(Icons.star, color: redColor),
-                      Icon(Icons.star_half, color: redColor)
+                      Icon(Icons.star, color: redColor, size: 18),
+                      Icon(Icons.star, color: redColor, size: 18),
+                      Icon(Icons.star, color: redColor, size: 18),
+                      Icon(Icons.star, color: redColor, size: 18),
+                      Icon(Icons.star_half, color: redColor, size: 18),
                     ]
                   ),
                   Row(
@@ -82,11 +92,9 @@ class CardWidget extends StatelessWidget {
                     children: [
                       Text(
                         '\$ ${perfume.price.toString()}',
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
                         style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                       ),
-                      FavoriteIcon(sizeIcon: 25),
+                      FavoriteIcon(sizeIcon: 20),
                     ],
                   )
                 ]

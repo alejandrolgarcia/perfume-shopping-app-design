@@ -13,6 +13,7 @@ class PerfumeDetail extends StatelessWidget {
 
     return Scaffold(
       body: Container(
+
         child: Stack(
           children: [
             imagen(perfume),
@@ -43,7 +44,7 @@ class PerfumeDetail extends StatelessWidget {
       width: 40,
       height: 30,
       margin: EdgeInsets.only(
-        top: 50,
+        top: 60,
         left: 20
       ),
       decoration: BoxDecoration(
@@ -117,7 +118,7 @@ class PerfumeDetail extends StatelessWidget {
                 children: [
                   Container(
                     height: 50,
-                    width: 300,
+                    width: 250,
                     decoration: BoxDecoration(
                       color: redColor,
                       borderRadius: BorderRadius.circular(10)

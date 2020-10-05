@@ -87,12 +87,13 @@ class Home extends StatelessWidget {
       padding: EdgeInsets.all(20),
       child: TextField(
         style: TextStyle(fontSize: 20),
-        obscureText: true,
+        obscureText: false,
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.only(top: 20, bottom: 20),
+          contentPadding: EdgeInsets.only(top: 15, bottom: 15),
           filled: true,
           fillColor: greyColor,
           border: InputBorder.none,
+          
           prefixIcon: Icon(
             Icons.search,
             color: redColor,
@@ -119,14 +120,14 @@ class Home extends StatelessWidget {
           Text(
             '2250',
             style: TextStyle(
-              fontSize: 20,
+              fontSize: 18,
               fontWeight: FontWeight.bold
             ),
           ),
           SizedBox(width: 15),
           Container(
-            height: 35,
-            width: 110,
+            height: 30,
+            width: 100,
             decoration: BoxDecoration(
               color: redColor,
               borderRadius: BorderRadius.circular(20)
@@ -138,12 +139,13 @@ class Home extends StatelessWidget {
                   'SEE ALL',
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 16
+                    fontSize: 14
                   ),
                 ),
                 Icon(
                   Icons.arrow_forward_ios,
                   color: Colors.white,
+                  size: 18,
                 )
               ],
             ),
@@ -156,8 +158,8 @@ class Home extends StatelessWidget {
   Widget bestSellers() {
 
     return Container(
-      padding: EdgeInsets.only(left: 10),
-      height: 450.0,
+      // padding: EdgeInsets.only(left: 10),
+      height: 385.0,
       child: FutureBuilder(
         future: perfumeProvider.loadData(),
         builder: (BuildContext context, AsyncSnapshot<Result> snapshot) {
@@ -186,8 +188,10 @@ class Home extends StatelessWidget {
 
   Widget allPerfumes() {
     return Container(
-      padding: EdgeInsets.only(left: 10, top: 10),
-      height: 180.0,
+      padding: EdgeInsets.only(
+        top: 10,
+      ),
+      height: 170.0,
       child: FutureBuilder(
         future: perfumeProvider.loadAllPerfumes(),
         builder: (BuildContext context, AsyncSnapshot<Result> snapshot) {
@@ -199,7 +203,11 @@ class Home extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 children: snapshot.data.results.map<Widget>( (result) {
                   return Container(
-                    padding: EdgeInsets.all(10),
+                    padding: EdgeInsets.only(
+                      left: 20,
+                      top: 10,
+                      bottom: 10
+                    ),
                     child: SmallCardWidget(perfume: result)
                   );
                 }).toList()
